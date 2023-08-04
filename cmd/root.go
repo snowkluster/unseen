@@ -35,10 +35,6 @@ func Execute() {
 	}
 }
 
-func addSubcommandPalettes() {
-	rootCmd.AddCommand(hash.HashCmd)
-}
-
 func init() {
 	// Here you will define your flags and configuration settings.
 	// Cobra supports persistent flags, which, if defined here,
@@ -50,7 +46,5 @@ func init() {
 	// when this action is called directly.
 	rootCmd.AddCommand(versionCmd)
 	rootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
-	addSubcommandPalettes()
+	rootCmd.AddCommand(hash.HashCmd)
 }
-
-
