@@ -2,31 +2,26 @@
 Copyright © 2023 NAME HERE <EMAIL ADDRESS>
 
 */
-package cmd
+package hash
 
 import (
 	"fmt"
-
 	"github.com/spf13/cobra"
+	"crypto/md5"
+	"encoding/hex"
 )
 
 // md5Cmd represents the md5 command
 var md5Cmd = &cobra.Command{
 	Use:   "md5",
-	Short: "A brief description of your command",
-	Long: `A longer description that spans multiple lines and likely contains examples
-and usage of using your command. For example:
-
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+	Short: "hash a string using md5",
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("md5 called")
+		hash := md5.Sum([]byte(args[0]))
+		fmt.Println(hex.EncodeToString(hash[:]))
 	},
 }
 
 func init() {
-	rootCmd.AddCommand(md5Cmd)
 
 	// Here you will define your flags and configuration settings.
 

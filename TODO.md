@@ -1,6 +1,5 @@
 - [x] command line tool for hashing and detecting hashes
 - [x] hash md5
-- [ ] hash sha1
-- [ ] hash sha2
-- [ ] hash sha256
+- [x] hash sha2
+- [x] hash sha256
 - [ ] detect hashes atleast 10
