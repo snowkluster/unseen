@@ -36,7 +36,7 @@ func Execute() {
 }
 
 func addSubcommandPalettes() {
-	rootCmd.AddCommand(HashCmd)
+	rootCmd.AddCommand(hash.HashCmd)
 }
 
 func init() {
