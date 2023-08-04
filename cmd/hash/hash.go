@@ -18,7 +18,6 @@ var HashCmd = &cobra.Command{
 }
 
 func init() {
-	// rootCmd.AddCommand(hashCmd)
 
 	// Here you will define your flags and configuration settings.
 
