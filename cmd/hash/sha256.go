@@ -14,7 +14,7 @@ import (
 // sha256Cmd represents the sha256 command
 var sha256Cmd = &cobra.Command{
 	Use:   "sha256",
-	Short: "hash a string using sha2",
+	Short: "hash a string using sha256",
 	Run: func(cmd *cobra.Command, args []string) {
 		hash := sha256.Sum256([]byte(args[0]))
 		fmt.Println(hex.EncodeToString(hash[:]))
