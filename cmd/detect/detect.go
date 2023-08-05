@@ -6,7 +6,7 @@ package detect
 
 import (
 	"fmt"
-
+	"regexp"
 	"github.com/spf13/cobra"
 )
 
@@ -15,7 +15,17 @@ var DetectCmd = &cobra.Command{
 	Use:   "detect",
 	Short: "pass a string to detect the method used to hash it",
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("detect called")
+		md5Pattern := "^[0-9a-fA-F]{32}$"
+		match, err := regexp.MatchString(md5Pattern, args[0])
+		if err != nil {
+			fmt.Println("Error while matching: ",err)
+			return
+		}
+		if match {
+			fmt.Println("MD5 hash detected")
+		} else {
+			fmt.Println("Hash not found")
+		}
 	},
 }
 
