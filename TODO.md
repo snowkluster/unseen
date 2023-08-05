@@ -2,4 +2,4 @@
 - [x] hash md5
 - [x] hash sha2
 - [x] hash sha256
-- [ ] detect hashes atleast 10
+- [ ] detect hashes atleast top 10
